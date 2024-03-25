@@ -57,7 +57,7 @@ for current_version in ${versions}; do
       continue
    fi
   
-   languages="en `find locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \;`"
+   languages="en `find source/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \;`"
    for current_language in ${languages}; do
   
       # make the current language available to conf.py
