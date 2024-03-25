@@ -27,7 +27,3 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: "source/buildDocs.sh"
       shell: bash
-EOF
-      
-      
-
