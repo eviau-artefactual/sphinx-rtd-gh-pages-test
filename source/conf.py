@@ -80,7 +80,7 @@ html_context['version'] = current_version
 # POPULATE LINKS TO OTHER LANGUAGES
 html_context['languages'] = [ ('en', '/' +REPO_NAME+ '/en/' +current_version+ '/') ]
  
-languages = [lang.name for lang in os.scandir('locales') if lang.is_dir()]
+languages = [lang.name for lang in os.scandir('../locales') if lang.is_dir()]
 for lang in languages:
    html_context['languages'].append( (lang, '/' +REPO_NAME+ '/' +lang+ '/' +current_version+ '/') )
  
@@ -92,7 +92,9 @@ for version in versions:
    html_context['versions'].append( (version, '/' +REPO_NAME+ '/'  +current_language+ '/' +version+ '/') )
  
 # POPULATE LINKS TO OTHER FORMATS/DOWNLOADS
- 
+
+master_doc = 'index'
+
 # settings for creating PDF with rinoh
 rinoh_documents = [(
  master_doc,
