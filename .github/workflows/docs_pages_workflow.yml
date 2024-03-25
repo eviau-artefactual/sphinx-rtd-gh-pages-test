@@ -3,7 +3,6 @@ name: docs_pages_workflow
 # execute this workflow automatically when a we push to master
 on:
   push:
-    branches: [ main ]
  
 jobs:
  
@@ -19,8 +18,8 @@ jobs:
       run: |
         apt-get update
         apt-get install -y git
-        git clone --depth 1 "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
-        git config --global --add safe.directory /__w/sphinx-rtd-gh-pages-test/sphinx-rtd-gh-pages-test
+        git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
+	git config --global --add safe.directory /__w/sphinx-rtd-gh-pages-test/sphinx-rtd-gh-pages-test
       shell: bash
  
     - name: Execute script to build our documentation and update pages
@@ -28,3 +27,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: "source/buildDocs.sh"
       shell: bash
+EOF
+      
+      
+
